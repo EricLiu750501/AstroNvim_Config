@@ -1,5 +1,5 @@
 -- Now disable compiler.nvim
--- if true then return {} end
+if true then return {} end
 
 return {
   { -- This plugin

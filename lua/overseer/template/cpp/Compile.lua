@@ -1,5 +1,5 @@
 return {
-  name = "Compile & Run",
+  name = "Compile with clang",
   condition = {
     filetype = { "cpp" },
   },
@@ -12,9 +12,5 @@ return {
       args = { filename, "-o", output },
       conponent = "default",
     }
-  end,
-  post_process = function(task)
-    -- 編譯成功後執行程式
-    vim.defer_fn(function() vim.cmd("term ./" .. vim.fn.expand "%:r") end, 500)
   end,
 }

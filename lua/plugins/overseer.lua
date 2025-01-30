@@ -8,7 +8,11 @@ return {
   config = function()
     require("overseer").setup {
       dap = false,
-      templates = { "cpp.Compile_and_Run", "python.run" },
+      templates = {
+        "cpp.Compile",
+        "cpp.Run",
+        "python.run",
+      },
     }
   end,
 }
