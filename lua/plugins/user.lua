@@ -7,7 +7,12 @@
 return {
 
   -- == Examples of Adding Plugins ==
-
+  options = {
+    opt = {
+      tabstop = 4,
+      shiftwidth = 4,
+    },
+  },
   "andweeb/presence.nvim",
   {
     "ray-x/lsp_signature.nvim",
