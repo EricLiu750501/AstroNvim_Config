@@ -4,13 +4,15 @@ return {
     filetype = { "cpp" },
   },
   builder = function()
-    local filename = vim.fn.expand "%:t"
+    local filepath = vim.fn.expand("%:p")  
     local output = vim.fn.expand "%:r"
+
+    print(filepath)
     return {
       name = vim.fn.expand "%:t",
       cmd = { "clang++" },
-      args = { filename, "-o", output },
-      conponent = "default",
+      args = { filepath, "-o", output },
+      component = "default",
     }
   end,
 }

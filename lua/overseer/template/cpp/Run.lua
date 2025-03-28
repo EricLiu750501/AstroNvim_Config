@@ -4,11 +4,11 @@ return {
     filetype = { "cpp" },
   },
   builder = function()
-    local execute = vim.fn.expand "%:r"
+    local execute = vim.fn.expand "%:p:r"
     return {
       name = vim.fn.expand "%:t",
       cmd = { "./" .. execute },
-      conponent = "default",
+      component = "default",
     }
   end,
 }

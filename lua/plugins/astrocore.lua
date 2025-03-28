@@ -32,7 +32,8 @@ return {
         spell = false, -- sets vim.opt.spell
         signcolumn = "yes", -- sets vim.opt.signcolumn to yes
         wrap = false, -- sets vim.opt.wrap
-        -- tabstop = 4, -- set vim.tabstop = 4
+        tabstop = 4, -- set vim.opt.tabstop = 4
+        shiftwidth = 4,
       },
       g = { -- vim.g.<key>
         -- configure global vim variables (vim.g)
