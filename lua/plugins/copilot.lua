@@ -7,7 +7,7 @@ return {
       panel = { enabled = false },
       suggestion = {
         enabled = false,
-        auto_trigger = false,
+        auto_trigger = false, -- auto_trigger
         hide_during_completion = true,
         debounce = 75,
         keymap = {
