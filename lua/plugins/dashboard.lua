@@ -1,7 +1,10 @@
+
+
 local M = {}
 
 ---@type table<string, snacks.dashboard.Section>
 M.examples = {}
+
 
 M.examples.advanced = {
     { section = "header" , gap = 2},
@@ -32,7 +35,7 @@ M.examples.advanced = {
     },
     { section = "startup" },
 }
-
+local get_icon = require("astroui").get_icon
 
 return {
     "folke/snacks.nvim",
@@ -48,7 +51,16 @@ return {
                     "██║░╚███║███████╗╚█████╔╝░░╚██╔╝░░██║██║░╚═╝░██║",
                     "╚═╝░░╚══╝╚══════╝░╚════╝░░░░╚═╝░░░╚═╝╚═╝░░░░░╚═╝",
                 }, "\n"),
-                -- keys = {
+                keys = {
+                    { key = "n", action = "<Leader>n", icon = get_icon("FileNew", 0, true), desc = "New File  " },
+                    { key = "f", action = "<Leader>ff", icon = get_icon("Search", 0, true), desc = "Find File  " },
+                    { key = "o", action = "<Leader>fo", icon = get_icon("DefaultFile", 0, true), desc = "Recents  " },
+                    { key = "w", action = "<Leader>fw", icon = get_icon("WordFile", 0, true), desc = "Find Word  " },
+                    { key = "'", action = "<Leader>f'", icon = get_icon("Bookmarks", 0, true), desc = "Bookmarks  " },
+                    { key = "s", action = "<Leader>Sl", icon = get_icon("Refresh", 0, true), desc = "Last Session  " },
+                    { icon = " ", key = "q", desc = "Quit", action = ":qa" },
+                },
+                                -- keys = {
                 --     { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
                 --     { icon = " ", key = "n", desc = "New File", action = ":ene | startinsert" },
                 --     { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
@@ -63,5 +75,5 @@ return {
             sections = M.examples.advanced,
         },
     },
-} 
+}
 
