@@ -6,5 +6,8 @@ return {
         visible = true,
       },
     },
+    diagnostics = {
+      enable = false, -- 設為 false 來禁用
+    },
   },
 }
