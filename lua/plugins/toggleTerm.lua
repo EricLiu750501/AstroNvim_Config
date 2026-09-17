@@ -1,4 +1,6 @@
 -- local opts = { buffer = 0 };
+-- Linux: <C-esc> kitty 發不出、<F12> 是筆電 media key、win+ 被桌面攔截 → 用 <C-t>（kitty 如實傳送的純 control byte，t = Terminal）
+local exit_key = vim.fn.has("mac") == 1 and "<D-esc>" or "<C-t>"
 
 local exitTerm = function() vim.cmd ":ToggleTerm" end
 local tmp = function()
@@ -45,7 +47,7 @@ end
 
 return {
   "akinsho/toggleterm.nvim",
-  vim.keymap.set("t", "<D-esc>", exitTerm),
+  vim.keymap.set("t", exit_key, exitTerm),
   tmp(),
   tabTerm(),
 }
